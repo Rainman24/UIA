@@ -1,0 +1,28 @@
+html
+
+	head
+		script(src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous")
+
+		link(rel='shortcut icon', type='image/png', href='/images/favicon.png')
+		link(rel='stylesheet', href='/styles/adduser.css')
+
+		title Add User
+
+	body
+
+		include navbar.pug
+
+		p You can add a new user here
+
+		div#addform
+
+			form(method='POST' action='/adduser')
+
+				input(type='text' name='firstname' placeholder='Firstname')
+				input(type='text' name='lastname' placeholder='Lastname')
+				input(type='email' name='email' placeholder='Email')
+				input.submit(type='submit' value='Submit')
+
+		h2 #{message}

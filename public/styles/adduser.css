@@ -1,0 +1,49 @@
+body {
+	background-color: WhiteSmoke;
+}
+
+form {
+	display: block;
+	margin: auto;
+	padding: 20px;
+}
+
+h2 {
+	text-align: center;
+}
+
+p {
+	display: block;
+	position: absolute;
+	top:35%;
+	left:25%;
+	width: 50%;
+	font-family: Arial;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#addform {
+	background-color: grey;
+	display: block;
+	position: absolute;
+	top:40%;
+	left:25%;
+	width: 50%;
+}
+
+input {
+	width: 30%;
+	display: block;
+	margin: 10px auto;
+	padding: 4px;
+}
+
+a {
+	color: black;
+} 
+
+.submit {
+	width: 20%;
+	padding: 20px;
+}

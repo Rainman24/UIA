@@ -1,0 +1,27 @@
+html
+	head
+		script(src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous")
+		script(src='/scripts/userlist.js')
+
+		link(rel='shortcut icon', type='image/png', href='/images/favicon.png')
+		link(rel='stylesheet', href='/styles/userlist.css')
+
+		title Userlist
+	body
+
+	include navbar.pug
+
+	if founduser
+
+		h2(data-fname=founduser.firstname data-lname=founduser.lastname)
+
+	div#usercollection
+
+		each item in userNames
+
+			ul(class='userlist' id='users' data-firstname=item.firstname data-lastname=item.lastname)
+
+				li.users #{item.firstname} #{item.lastname}
+				li.users #{item.email}

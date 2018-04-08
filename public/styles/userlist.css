@@ -1,0 +1,53 @@
+body {
+	background-color: WhiteSmoke;
+	width: 100vw;
+	height: 100vh;
+	overflow-x: hidden;
+}
+
+#usercollection {
+	display: block;
+	margin-top: 10vh;
+}
+
+#users {
+	margin-top: 70px;
+	list-style: none;
+	width: 50%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.users {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding: 7px;
+	background: white;
+	margin: auto;
+}
+
+ul.userlist li:nth-child(1) {
+	border-top: 1px solid black;
+	font-weight: bold;
+	letter-spacing: 4px;
+}
+
+ul.userlist li:nth-child(2) {
+	border-bottom: 2px solid black;
+	border-top: 1px solid grey;
+	margin-bottom: 40px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+a {
+	color: DarkBlue;
+}
+
+li:hover {
+	background-color: GoldenRod;
+}
+
+h2 {
+	display: none;
+}

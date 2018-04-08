@@ -1,0 +1,40 @@
+ul.nav
+	li#one
+		a(href='/searchbar') SEARCHBAR
+	li#two
+		a(href='/userlist') LIST
+	li#three
+		a(href='/adduser') ADD USER
+
+style.
+
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav {
+		width: 100vw;
+		background-color: grey;
+		border: 1px black solid;
+		display: inline-block;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.nav li {
+		float: left;
+		display: inline;
+		text-align: center;
+		width: 33.3%;
+		padding: 10px;
+		font-size: 4vw;
+		font-family: arial;
+		font-weight: 100;
+		box-sizing: border-box;
+	}
+
+	#two, #three {
+		border-left: 2px solid black;
+	}
