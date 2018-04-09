@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 	console.log(uri[0].dataset.fname)
 	console.log(uri[0].dataset.lname)
-	var scrollto
+	// var scrollto
 
 	
 
@@ -56,12 +56,13 @@ $(document).ready(function(){
 			seltab[1].style.background = 'aliceblue'
 			$(element).attr('data-yes', true)
 
-			console.log(element.offsetTop, element.offsetWidth)
-			scrollto = element.offsetTop
+			console.log(element.offsetParent.offsetHeight, element.offsetWidth)
+			var scrollto = element.offsetParent.offsetHeight
 			console.log(scrollto)
 
 			
-			window.scrollTo(0,scrollto)
+			// window.scrollTo(0,scrollto)
+			$(window).animate({scrollTo:scrollto},'800');
 		}
 		else if(uri[0].dataset.fname==firstn.toLowerCase()||uri[0].dataset.lname==lastn.toLowerCase()){
 			
@@ -72,11 +73,13 @@ $(document).ready(function(){
 			$(element).attr('data-yes', true)
 
 			console.log(element.offsetTop, element.offsetWidth)
-			scrollto = element.offsetTop
+			var scrolltop = element.offsetParent.offsetHeight
+			scrollWidth = element.offsetWidth
 			console.log(scrollto)
 
 			
-			window.scrollTo(0,scrollto)
+			window.scrollTo(0,scrolltop)
+			// $(window).animate({scrollTo:scrollto},'800');
 		}
 	})
 

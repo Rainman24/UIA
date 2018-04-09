@@ -20,8 +20,7 @@ body {
 #searchform {
 	grid-column: 2/3;
 	grid-row: 2/3;
-	/*background: grey;*/
-	background: radial-gradianet(rgba(110,110,110,0.9),rgba(140,140,140,1));
+	background: radial-gradient(rgba(110,110,110,0.8),rgba(190,190,190,1));
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -48,6 +47,7 @@ input {
 	display: block;
 	margin: 0 auto;
 	padding: 10px;
+	transition: 0.8s ease;
 }
 
 #submit {
@@ -60,16 +60,17 @@ input {
 
 #autocomplete {
 	border: 1px solid black;
+	background: white;
 }
 
 #autocomplete:focus {
 	outline: none;
 	border: 0;
-	background: linear-gradient(rgba(218,165,32,1),white);
+	background: linear-gradient(rgba(218,165,32,1),rgba(230,230,230,1),white);
 }
 
 .grid {
-	border: 1px solid rgba(250,250,250,0.4);
+	border: 1px solid grey;
 	width: 100%;
 	height: 100%;
 }

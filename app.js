@@ -23,11 +23,7 @@ app.post('/searchbar', function(req, res){
 
 		var searchres = req.body.searchreq
 		var searchresLo = searchres.toLowerCase()
-		console.log('searchresLo', searchresLo)
 		var searchsplit = searchres.toLowerCase().split(' ');
-		console.log('searchsplit', searchsplit)
-
-		// var resdir = []
 
 		var allmatches = new Object()
 
@@ -75,9 +71,9 @@ app.post('/searchbar', function(req, res){
 
 					allmatches['lastname']=searchsplit[0]
 
-					if(resdir.length<=1){
-					resdir.push(allmatches.lastname)	
-					}
+					// if(resdir.length<=1){
+					// resdir.push(allmatches.lastname)	
+					// }
 					
 					Object.getOwnPropertyNames(allmatches).length<2 ? foundmatches = `lastname=${searchsplit[0]}` : foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
 				}
@@ -129,8 +125,6 @@ app.post('/adduser', function(req, res) {
 		})
 	})
 })
-
-// var search = process.argv[2]
 
 app.post('/suggestion', (req, res)=> { 
     

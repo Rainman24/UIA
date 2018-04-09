@@ -1,51 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
 body {
 	background-color: WhiteSmoke;
 	width: 100vw;
-	height: 100vh;
 	overflow-x: hidden;
 }
 
-#usercollection {
-	display: block;
-	margin-top: 10vh;
+.ucoll {
+	margin-top: 5vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
 }
 
-#users {
-	margin-top: 70px;
+ul.userlist {
 	list-style: none;
-	width: 50%;
-	margin: 0 auto;
+	width: 100%;
+	max-height: 10vh;
 	padding: 0;
+	transition: 0.8s ease;
 }
 
-.users {
+li.users {
 	border-left: 1px solid black;
 	border-right: 1px solid black;
+	border-top: 1px solid black;
 	padding: 7px;
 	background: white;
+	text-transform: uppercase;
+	width: 50%;
+	display: block;
 	margin: auto;
+	transition: 0.8s ease;
 }
 
 ul.userlist li:nth-child(1) {
-	border-top: 1px solid black;
+	font-family: 'Old Standard TT', serif;
 	font-weight: bold;
-	letter-spacing: 4px;
 }
 
 ul.userlist li:nth-child(2) {
 	border-bottom: 2px solid black;
-	border-top: 1px solid grey;
-	margin-bottom: 40px;
-	text-align: center;
-	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
+	text-align: right;
 }
 
 a {
-	color: DarkBlue;
+	color: rgba(1,1,99,1);
 }
 
-li:hover {
-	background-color: GoldenRod;
+a:hover {
+	color: white;
+}
+
+ul.userlist:hover {
+	background: url('/images/VBurlyuk_blur.jpg');
+	background-size: cover;
+	background-position: 0 60%;
+}
+
+ul.userlist:hover li {
+	background-color: rgba(200,200,200,0.8);
+	text-align: center;
+}
+
+::selection {
+	color: white;
+	text-shadow: 0px 0px 4px black;
 }
 
 h2 {
