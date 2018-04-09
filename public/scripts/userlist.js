@@ -61,8 +61,8 @@ $(document).ready(function(){
 			console.log(scrollto)
 
 			
-			// window.scrollTo(0,scrollto)
-			$(window).animate({scrollTo:scrollto},'800');
+			window.scrollTo(0,scrollto)
+			// $(window).animate({scrollTo:scrollto},'800');
 		}
 		else if(uri[0].dataset.fname==firstn.toLowerCase()||uri[0].dataset.lname==lastn.toLowerCase()){
 			

@@ -33,7 +33,7 @@ li.users {
 	width: 50%;
 	display: block;
 	margin: auto;
-	transition: 0.8s ease;
+	transition: 2s ease;
 }
 
 ul.userlist li:nth-child(1) {
@@ -61,7 +61,7 @@ ul.userlist:hover {
 	background-position: 0 60%;
 }
 
-ul.userlist:hover li {
+ul.userlist:hover li.users {
 	background-color: rgba(200,200,200,0.8);
 	text-align: center;
 }
