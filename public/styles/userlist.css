@@ -30,10 +30,10 @@ li.users {
 	padding: 7px;
 	background: white;
 	text-transform: uppercase;
-	width: 50%;
+	width: 60%;
 	display: block;
 	margin: auto;
-	transition: 2s ease;
+	transition: 0.8s ease;
 }
 
 ul.userlist li:nth-child(1) {
@@ -49,6 +49,10 @@ ul.userlist li:nth-child(2) {
 
 a {
 	color: rgba(1,1,99,1);
+}
+
+ul.nav {
+	background-color: rgba(255,255,255,1);
 }
 
 a:hover {

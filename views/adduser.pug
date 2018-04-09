@@ -20,7 +20,7 @@ html
 
 				p You can add a new user here
 
-				form(method='POST' action='/adduser')
+				form(id='adduser' method='POST' autocomplete='off' action='/adduser')
 
 					input(type='text' name='firstname' placeholder='Firstname')
 					input(type='text' name='lastname' placeholder='Lastname')

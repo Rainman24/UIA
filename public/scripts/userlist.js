@@ -1,87 +1,53 @@
 $(document).ready(function(){
 
-	var uri = $('h2')
+	var uri = $('#querystring')
 
-	console.log(uri[0].dataset.fname)
-	console.log(uri[0].dataset.lname)
-	// var scrollto
+	var body = $('body')
 
-	
+	if(body[0].children.item(2).id==='querystring'){
 
-	// $('ul.userlist').each(function(index,element){
-	// 	var firstn = element.dataset.firstname
-	// 	var lastn = element.dataset.lastname
+		console.log(body[0].children.item(2).id)
 
-	// 	if(uri[0].dataset.query1==firstn.toLowerCase()){
-			
-	// 		var seltab = element.children
-	// 		element.style.borderTop = '4px solid black'
-	// 		seltab[0].style.background = 'goldenrod'
-	// 		seltab[1].style.background = 'aliceblue'
-	// 		$(element).attr('data-yes', true)
+		$('ul.userlist').each(function(index,element){
+			var firstn = element.dataset.firstname
+			var lastn = element.dataset.lastname
 
-	// 		console.log(element.offsetTop, element.offsetWidth)
-	// 		scrollto = element.offsetTop
-	// 		console.log(scrollto)
+			if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname==lastn.toLowerCase()){
+				
+				var seltab = element.children
+				element.style.borderTop = '4px solid black'
+				seltab[0].style.background = 'goldenrod'
+				seltab[1].style.background = 'aliceblue'
+				$(element).attr('data-yes', true)
 
-			
-	// 		window.scrollTo(0,scrollto)
-	// 	}
-	// 	else if(uri[0].dataset.query2==lastn.toLowerCase()){
-			
-	// 		var seltab = element.children
-	// 		element.style.borderTop = '4px solid black'
-	// 		seltab[0].style.background = 'goldenrod'
-	// 		seltab[1].style.background = 'aliceblue'
-	// 		$(element).attr('data-yes', true)
+				console.log(element.offsetParent.offsetHeight, element.offsetWidth)
+				var scrollto = element.offsetParent.offsetHeight
+				console.log(scrollto)
 
-	// 		console.log(element.offsetTop, element.offsetWidth)
-	// 		scrollto = element.offsetTop
-	// 		console.log(scrollto)
+				
+				window.scrollTo(0,scrollto)
+				// $(window).animate({scrollTo:scrollto},'800');
+			}
+			else if(uri[0].dataset.fname==firstn.toLowerCase()||uri[0].dataset.lname==lastn.toLowerCase()){
+				
+				var seltab = element.children
+				element.style.borderTop = '4px solid black'
+				seltab[0].style.background = 'grey'
+				seltab[1].style.background = 'aliceblue'
+				$(element).attr('data-yes', true)
 
-			
-	// 		window.scrollTo(0,scrollto)
-	// 	}
-	// })
+				console.log(element.offsetTop, element.offsetWidth)
+				var scrolltop = element.offsetParent.offsetHeight
+				scrollWidth = element.offsetWidth
+				console.log(scrollto)
 
-	$('ul.userlist').each(function(index,element){
-		var firstn = element.dataset.firstname
-		var lastn = element.dataset.lastname
+				
+				window.scrollTo(0,scrolltop)
+				// $(window).animate({scrollTo:scrollto},'800');
+			}
 
-		if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname==lastn.toLowerCase()){
-			
-			var seltab = element.children
-			element.style.borderTop = '4px solid black'
-			seltab[0].style.background = 'goldenrod'
-			seltab[1].style.background = 'aliceblue'
-			$(element).attr('data-yes', true)
-
-			console.log(element.offsetParent.offsetHeight, element.offsetWidth)
-			var scrollto = element.offsetParent.offsetHeight
-			console.log(scrollto)
-
-			
-			window.scrollTo(0,scrollto)
-			// $(window).animate({scrollTo:scrollto},'800');
-		}
-		else if(uri[0].dataset.fname==firstn.toLowerCase()||uri[0].dataset.lname==lastn.toLowerCase()){
-			
-			var seltab = element.children
-			element.style.borderTop = '4px solid black'
-			seltab[0].style.background = 'grey'
-			seltab[1].style.background = 'aliceblue'
-			$(element).attr('data-yes', true)
-
-			console.log(element.offsetTop, element.offsetWidth)
-			var scrolltop = element.offsetParent.offsetHeight
-			scrollWidth = element.offsetWidth
-			console.log(scrollto)
-
-			
-			window.scrollTo(0,scrolltop)
-			// $(window).animate({scrollTo:scrollto},'800');
-		}
-	})
+		})
+	}
 
 
 
