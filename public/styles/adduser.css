@@ -10,6 +10,8 @@ body {
 
 h2 {
 	text-align: center;
+	grid-row: 3/4;
+	align-self: center;
 }
 
 #main {
@@ -68,12 +70,6 @@ input {
 	text-transform: uppercase;
 	border-radius: 5px 9px;
 	border: 1px solid black;
-}
-
-::selection {
-	color: white;
-	text-shadow: 0px 0px 4px black;
-	background: rgba(240,240,240,0.5);
 }
 
 a {

@@ -13,20 +13,25 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
+	scroll-behavior: smooth;
 }
 
 ul.userlist {
 	list-style: none;
+	/*position: relative;*/
 	width: 100%;
 	max-height: 10vh;
 	padding: 0;
 	transition: 0.8s ease;
 }
 
+ul.userlist[data-match=true]{
+	border-top: 4px solid black;
+}
+
 li.users {
-	border-left: 1px solid black;
-	border-right: 1px solid black;
-	border-top: 1px solid black;
+	border: 1px solid black;
+	border-bottom: 0;
 	padding: 7px;
 	background: white;
 	text-transform: uppercase;
@@ -68,11 +73,6 @@ ul.userlist:hover {
 ul.userlist:hover li.users {
 	background-color: rgba(200,200,200,0.8);
 	text-align: center;
-}
-
-::selection {
-	color: white;
-	text-shadow: 0px 0px 4px black;
 }
 
 h2 {
