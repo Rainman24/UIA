@@ -7,6 +7,14 @@ body {
 	overflow-x: hidden;
 }
 
+a {
+	color: rgba(1,1,99,1);
+}
+
+a:hover {
+	color: white;
+}
+
 .ucoll {
 	margin-top: 5vh;
 	display: flex;
@@ -18,27 +26,38 @@ body {
 
 ul.userlist {
 	list-style: none;
-	/*position: relative;*/
 	width: 100%;
 	max-height: 10vh;
 	padding: 0;
 	transition: 0.8s ease;
 }
 
-ul.userlist[data-match=true]{
+ul.userlist[data-fnamematch=true],ul.userlist[data-lnamematch=true]{
 	border-top: 4px solid black;
 }
 
 li.users {
 	border: 1px solid black;
 	border-bottom: 0;
-	padding: 7px;
+	padding: 10;
 	background: white;
 	text-transform: uppercase;
 	width: 60%;
 	display: block;
 	margin: auto;
 	transition: 0.8s ease;
+}
+
+ul.userlist[data-fullmatch=true] li:nth-child(1){
+	background: goldenrod;
+}
+
+ul.userlist[data-fnamematch=true] li:nth-child(1), ul.userlist[data-lnamematch=true] li:nth-child(1){
+	background: aliceblue;
+}
+
+ul.userlist[data-fnamematch] li:nth-child(2), ul.userlist[data-lnamematch] li:nth-child(2){
+	background: aliceblue;
 }
 
 ul.userlist li:nth-child(1) {
@@ -52,18 +71,6 @@ ul.userlist li:nth-child(2) {
 	text-align: right;
 }
 
-a {
-	color: rgba(1,1,99,1);
-}
-
-ul.nav {
-	background-color: rgba(255,255,255,1);
-}
-
-a:hover {
-	color: white;
-}
-
 ul.userlist:hover {
 	background: url('/images/VBurlyuk_blur.jpg');
 	background-size: cover;
@@ -73,8 +80,4 @@ ul.userlist:hover {
 ul.userlist:hover li.users {
 	background-color: rgba(200,200,200,0.8);
 	text-align: center;
-}
-
-h2 {
-	display: none;
 }

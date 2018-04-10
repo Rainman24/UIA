@@ -4,12 +4,6 @@ $(document).ready(function(){
 		$('#main').append(`<div class='grid'></div>`)
 	}
 
-	var capitalnote = $('#searchform p')
-
-	var firstl = capitalnote[0].textContent
-
-	console.log(firstl[0])
-
 	$('#autocomplete').keyup(function(anevent) {
 
 		var inputDisplay = $('#autocomplete').val()

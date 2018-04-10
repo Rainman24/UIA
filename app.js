@@ -24,7 +24,6 @@ app.post('/searchbar', function(req, res){
 		var searchres = req.body.searchreq
 		var searchresLo = searchres.toLowerCase()
 		var searchsplit = searchres.toLowerCase().split(' ');
-		console.log(searchsplit)
 
 		var allmatches = new Object()
 
@@ -36,15 +35,12 @@ app.post('/searchbar', function(req, res){
 
 			var ufirstname = userNames[i].firstname.toLowerCase()
 			var ulastname = userNames[i].lastname.toLowerCase()
-			var useratloop = ufirstname + ' ' + ulastname
 
 			var fnameWithSpaces = ufirstname.split(' ')
 			var lnameWithSpaces = ulastname.split(' ')
 
 
 			if(searchsplit[0]===ufirstname&&searchsplit[1]===ulastname){
-
-				// resdir = searchsplit
 
 				allmatches['firstname']=searchsplit[0]
 				allmatches['lastname']=searchsplit[1]
@@ -57,38 +53,32 @@ app.post('/searchbar', function(req, res){
 				if(fnameWithSpaces.length>1||lnameWithSpaces.length>1){
 					
 				fnameWithSpaces.forEach(function(fname){
-					// console.log(fname)
+					
 					if(searchsplit[0]===fname){
 						console.log(searchsplit[0])
-						allmatches['firstname']=searchsplit[0]
+						allmatches['firstname']=ufirstname
 						foundmatches = `firstname=${allmatches.firstname}`
 						}
 					})
 				lnameWithSpaces.forEach(function(lname){
-					// console.log(fname)
+					
 					if(searchsplit[0]===lname){
 						console.log(searchsplit[0])
+						allmatches['lastname']=ulastname
+						foundmatches = `lastname=${allmatches.lastname}`
 						}
 					})
 
 				}
 
-
 				if(searchsplit[0]===ufirstname){
 								
 					allmatches['firstname']=searchsplit[0]
-		
-					// resdir.push(allmatches.firstname)
-
 					foundmatches = `firstname=${allmatches.firstname}`
 
 				} else if(searchsplit[0]===ulastname){
 
 					allmatches['lastname']=searchsplit[0]
-
-					// if(resdir.length<=1){
-					// resdir.push(allmatches.lastname)	
-					// }
 					
 					Object.getOwnPropertyNames(allmatches).length<2 ? foundmatches = `lastname=${searchsplit[0]}` : foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
 				}
