@@ -51,7 +51,7 @@ app.post('/searchbar', function(req, res){
 				foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
 			}
 
-			if(searchsplit.length===1||searchsplitDash.length===1){
+			else if(searchsplit.length===1||searchsplitDash.length===1){
 
 				if(fnameWithSpaces.length>1||lnameWithSpaces.length>1){
 					
