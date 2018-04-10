@@ -82,15 +82,6 @@ app.post('/searchbar', function(req, res){
 					
 					Object.getOwnPropertyNames(allmatches).length<2 ? foundmatches = `lastname=${searchsplit[0]}` : foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
 				}
-
-			
-
-			if(useratloop===searchres.toLowerCase()){
-					allmatches['firstname']=ufirstname
-					allmatches['lastname']=ulastname
-
-					foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
-				}	
 			}
 		}
 
