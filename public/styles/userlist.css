@@ -16,12 +16,19 @@ a:hover {
 }
 
 .ucoll {
-	margin-top: 5vh;
+	/*margin-top: 5vh;*/
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	width: 100%;
 	scroll-behavior: smooth;
+	background: url('/images/VBurlyuk_vertical.jpg');
+	background-size: cover;
+	background-position: 50% 0%;
+}
+
+div.ucoll ul:nth-child(1) {
+	margin-top: 5vh;
 }
 
 ul.userlist {
@@ -34,6 +41,10 @@ ul.userlist {
 
 ul.userlist[data-fnamematch=true],ul.userlist[data-lnamematch=true]{
 	border-top: 4px solid black;
+}
+
+ul.userlist:last-child {
+	margin-bottom: 10vh;
 }
 
 li.users {
@@ -71,13 +82,14 @@ ul.userlist li:nth-child(2) {
 	text-align: right;
 }
 
-ul.userlist:hover {
+/*ul.userlist:hover {
 	background: url('/images/VBurlyuk_blur.jpg');
 	background-size: cover;
 	background-position: 0 60%;
-}
+}*/
 
 ul.userlist:hover li.users {
 	background-color: rgba(200,200,200,0.8);
 	text-align: center;
+	color: brown;
 }

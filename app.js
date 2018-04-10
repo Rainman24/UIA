@@ -52,23 +52,21 @@ app.post('/searchbar', function(req, res){
 
 				if(fnameWithSpaces.length>1||lnameWithSpaces.length>1){
 					
-				fnameWithSpaces.forEach(function(fname){
-					
-					if(searchsplit[0]===fname){
-						console.log(searchsplit[0])
-						allmatches['firstname']=ufirstname
-						foundmatches = `firstname=${allmatches.firstname}`
+					fnameWithSpaces.forEach(function(fname){
+						
+						if(searchsplit[0]===fname){
+							allmatches['firstname']=ufirstname
+							foundmatches = `firstname=${allmatches.firstname}`
 						}
 					})
-				lnameWithSpaces.forEach(function(lname){
 					
-					if(searchsplit[0]===lname){
-						console.log(searchsplit[0])
-						allmatches['lastname']=ulastname
-						foundmatches = `lastname=${allmatches.lastname}`
+					lnameWithSpaces.forEach(function(lname){
+						
+						if(searchsplit[0]===lname){
+							allmatches['lastname']=ulastname
+							foundmatches = `lastname=${allmatches.lastname}`
 						}
 					})
-
 				}
 
 				if(searchsplit[0]===ufirstname){

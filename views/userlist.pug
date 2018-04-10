@@ -25,3 +25,26 @@ html
 
 				li.users #{item.firstname} #{item.lastname}
 				li.users #{item.email}
+
+script.
+
+	$(document).ready(function(){
+
+		$('ul.userlist').each(function(index,element){
+			
+			if(element.dataset.fullmatch=='true'){
+				var ulloc = parseInt(element.offsetTop)-20
+				window.scrollTo(0,ulloc)
+			}
+			if(element.dataset.fnamematch=='true'){
+				var ulloc = parseInt(element.offsetTop)-20
+				window.scrollTo(0,ulloc)
+			}
+			if(element.dataset.lnamematch=='true'){
+				var ulloc = parseInt(element.offsetTop)-20
+				window.scrollTo(0,ulloc)
+			}
+			
+		})
+
+	})
