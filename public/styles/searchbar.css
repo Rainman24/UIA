@@ -31,9 +31,11 @@ body {
 p {
 	display: block;
 	font-family: Arial;
-	font-size: 2vw;
+	width: 70%;
+	font-size: 3vh;
 	text-align: center;
 	text-transform: uppercase;
+	margin: 0 auto;
 	margin-top: 20;
 	padding: 10;
 }
