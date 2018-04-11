@@ -8,6 +8,10 @@ body {
 	height: 100%;
 }
 
+a {
+	color: black;
+} 
+
 h2 {
 	text-align: center;
 	grid-row: 3/4;
@@ -72,6 +76,14 @@ input {
 	border: 1px solid black;
 }
 
-a {
-	color: black;
-} 
+input.validation:focus {
+	outline: none;
+	border-color: transparent;
+	box-shadow: 0 0 2vw rgba(0,0,0,0.7);
+}
+
+input.valid:focus {
+	outline: none;
+	border-color: transparent;
+	box-shadow: 0 0 2vw rgba(0,200,40,0.7);
+}

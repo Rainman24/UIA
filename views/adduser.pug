@@ -4,6 +4,7 @@ html
 		script(src="https://code.jquery.com/jquery-3.2.1.js"
 			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
 			  crossorigin="anonymous")
+		script(src='/scripts/adduser.js')
 
 		link(rel='shortcut icon', type='image/png', href='/images/favicon.png')
 		link(rel='stylesheet', href='/styles/adduser.css')
@@ -22,9 +23,9 @@ html
 
 				form(id='adduser' method='POST' autocomplete='off' action='/adduser')
 
-					input(type='text' name='firstname' placeholder='Firstname')
-					input(type='text' name='lastname' placeholder='Lastname')
-					input(type='email' name='email' placeholder='Email')
+					input(class='validation' type='text' name='firstname' placeholder='Firstname')
+					input(class='validation' type='text' name='lastname' placeholder='Lastname')
+					input(class='validation' type='email' name='email' placeholder='Email')
 					input#submit(type='submit' value='Submit')
 
 				h2 #{message}
