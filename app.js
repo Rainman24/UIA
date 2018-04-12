@@ -21,9 +21,9 @@ app.post('/searchbar', function(req, res){
 	fs.readFile('./public/json/' + 'users.json', 'utf8', function(err,data){
 		if(err) {throw err}
 		
-		const fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/ig;
+		// const fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/ig;
 
-		const fullName2 = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
+		// const fullName2 = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
 
 		var userNames = JSON.parse(data)
 
@@ -39,93 +39,92 @@ app.post('/searchbar', function(req, res){
 		var foundmatches
 
 
-		for(i=0;i<userNames.length;i++){
+			for(i=0;i<userNames.length;i++){
 
-			var ufirstname = userNames[i].firstname.toLowerCase()
-			var ulastname = userNames[i].lastname.toLowerCase()
-			var fullUserName = `${ufirstname} ${ulastname}`
+				var ufirstname = userNames[i].firstname.toLowerCase()
+				var ulastname = userNames[i].lastname.toLowerCase()
+				var fullUserName = `${ufirstname} ${ulastname}`
 
-			var fnameWithSpaces = ufirstname.split(' '),
-				fnameWithDashes = ufirstname.split('-')
-			var lnameWithSpaces = ulastname.split(' '),
-				lnameWithDashes = ulastname.split('-')
+				var fnameWithSpaces = ufirstname.split(' '),
+					fnameWithDashes = ufirstname.split('-')
+				var lnameWithSpaces = ulastname.split(' '),
+					lnameWithDashes = ulastname.split('-')
 
-			if(searchresLo==fullUserName){
+				if(searchresLo==fullUserName){
 
-				console.log(fullUserName)
+					console.log(fullUserName)
 
-				allmatches['firstname']=ufirstname
-				allmatches['lastname']=ulastname
+					allmatches['firstname']=ufirstname
+					allmatches['lastname']=ulastname
 
-				foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
+					foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
 
-			} else{
+				} else {
 
-			if(searchsplit[0]===ufirstname&&searchsplit[1]===ulastname){
+					if(searchsplit[0]===ufirstname&&searchsplit[1]===ulastname){
 
-				allmatches['firstname']=searchsplit[0]
-				allmatches['lastname']=searchsplit[1]
+						allmatches['firstname']=searchsplit[0]
+						allmatches['lastname']=searchsplit[1]
 
-				foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
-			}
+						foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
+					}
 
-			else if(searchsplit.length===1||searchsplitDash.length===1){
+					else if(searchsplit.length===1||searchsplitDash.length===1){
 
-				if(fnameWithSpaces.length>1||lnameWithSpaces.length>1){
-					
-					fnameWithSpaces.forEach(function(fname){
-						
-						if(searchsplit[0]===fname){
-							allmatches['firstname']=ufirstname
-							foundmatches = `firstname=${allmatches.firstname}`
-						}
-					})
-					
-					lnameWithSpaces.forEach(function(lname){
-						
-						if(searchsplit[0]===lname){
-							allmatches['lastname']=ulastname
-							foundmatches = `lastname=${allmatches.lastname}`
-						}
-					})
-				}
-
-				if(fnameWithDashes.length>1||lnameWithDashes.length>1){
-					
-					fnameWithDashes.forEach(function(fname){
-						
-						if(searchsplit[0]===fname){
-							allmatches['firstname']=ufirstname
-							foundmatches = `firstname=${allmatches.firstname}`
-						}
-					})
-					
-					lnameWithDashes.forEach(function(lname){
-						
-						if(searchsplit[0]===lname){
-							allmatches['lastname']=ulastname
-							foundmatches = `lastname=${allmatches.lastname}`
-						}
-					})
-				}
-
-				if(searchsplit[0]===ufirstname){
+						if(fnameWithSpaces.length>1||lnameWithSpaces.length>1){
+							
+							fnameWithSpaces.forEach(function(fname){
 								
-					allmatches['firstname']=searchsplit[0]
-					foundmatches = `firstname=${allmatches.firstname}`
+								if(searchsplit[0]===fname){
+									allmatches['firstname']=ufirstname
+									foundmatches = `firstname=${allmatches.firstname}`
+								}
+							})
+							
+							lnameWithSpaces.forEach(function(lname){
+								
+								if(searchsplit[0]===lname){
+									allmatches['lastname']=ulastname
+									foundmatches = `lastname=${allmatches.lastname}`
+								}
+							})
+						}
 
-				} else if(searchsplit[0]===ulastname){
+						if(fnameWithDashes.length>1||lnameWithDashes.length>1){
+							
+							fnameWithDashes.forEach(function(fname){
+								
+								if(searchsplit[0]===fname){
+									allmatches['firstname']=ufirstname
+									foundmatches = `firstname=${allmatches.firstname}`
+								}
+							})
+							
+							lnameWithDashes.forEach(function(lname){
+								
+								if(searchsplit[0]===lname){
+									allmatches['lastname']=ulastname
+									foundmatches = `lastname=${allmatches.lastname}`
+								}
+							})
+						}
 
-					allmatches['lastname']=searchsplit[0]
-					
-					Object.getOwnPropertyNames(allmatches).length<2 ? foundmatches = `lastname=${searchsplit[0]}` : foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
+						if(searchsplit[0]===ufirstname){
+										
+							allmatches['firstname']=searchsplit[0]
+							foundmatches = `firstname=${allmatches.firstname}`
+
+						} else if(searchsplit[0]===ulastname){
+
+							allmatches['lastname']=searchsplit[0]
+							
+							Object.getOwnPropertyNames(allmatches).length<2 ? foundmatches = `lastname=${searchsplit[0]}` : foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
+						}
+					}
 				}
 			}
 
-		}
-		}
-
-	Object.keys(allmatches).length !== 0 ? res.redirect(`/userlist/user?${foundmatches}`) : res.redirect(`/adduser?message=${because}`)
+		Object.keys(allmatches).length !== 0 ? res.redirect(`/userlist/user?${foundmatches}`) : res.redirect(`/adduser?message=${because}`)
 	
 	})
 })
