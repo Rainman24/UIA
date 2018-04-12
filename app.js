@@ -14,13 +14,16 @@ app.get('/', (req, res)=>{
 	res.render('index')
 })
 
-const fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/ig.flags
 
 app.post('/searchbar', function(req, res){
 
 
 	fs.readFile('./public/json/' + 'users.json', 'utf8', function(err,data){
 		if(err) {throw err}
+		
+		const fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/ig;
+
+		const fullName2 =/^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
 
 		var userNames = JSON.parse(data)
 

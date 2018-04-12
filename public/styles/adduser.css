@@ -8,14 +8,6 @@ body {
 	height: 100%;
 }
 
-a {
-	color: WhiteSmoke;
-} 
-
-a:hover {
-	color: rgba(77,174,210,0.8);
-}
-
 h2 {
 	text-align: center;
 	grid-row: 3/4;
