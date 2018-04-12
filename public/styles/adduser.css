@@ -9,8 +9,12 @@ body {
 }
 
 a {
-	color: black;
+	color: WhiteSmoke;
 } 
+
+a:hover {
+	color: rgba(77,174,210,0.8);
+}
 
 h2 {
 	text-align: center;
@@ -83,7 +87,10 @@ input.validation:focus {
 }
 
 input.valid:focus {
-	outline: none;
-	border-color: transparent;
 	box-shadow: 0 0 2vw rgba(0,200,40,0.7);
+}
+
+::placeholder {
+  text-indent: 10%;
+  text-transform: uppercase;
 }
