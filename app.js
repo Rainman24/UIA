@@ -119,10 +119,12 @@ app.get('/', (req, res)=>{
 
 // 	})
 // })
+var fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/gi;
 
 app.post('/searchbar', function(req, res){
+	
 
-	fs.readFile('./public/json/' + 'users.json', 'utf8', function(err,data) {
+	fs.readFile('./public/json/' + 'users.json', 'utf8', function(err,data){
 		if(err) {throw err}
 
 		var userNames = JSON.parse(data)
@@ -132,15 +134,10 @@ app.post('/searchbar', function(req, res){
 		var searchsplit = searchres.toLowerCase().split(' '),
 			searchsplitDash = searchres.toLowerCase().split('-')
 
-		// console.log(searchres)
-
 		var allmatches = new Object()
 
 		var because = 'Sorry no matching users were found'
 		var foundmatches
-
-		var fullName = /\w{1,40}( |-)\w{1,40}/gi
-		var searchName = /\w{1,}\s\w{1,}/i
 
 
 		for(i=0;i<userNames.length;i++){
@@ -148,17 +145,11 @@ app.post('/searchbar', function(req, res){
 			var ufirstname = userNames[i].firstname.toLowerCase()
 			var ulastname = userNames[i].lastname.toLowerCase()
 			var fullUserName = `${ufirstname} ${ulastname}`
-			// console.log(fullUserName)
 
 			var fnameWithSpaces = ufirstname.split(' '),
 				fnameWithDashes = ufirstname.split('-')
 			var lnameWithSpaces = ulastname.split(' '),
 				lnameWithDashes = ulastname.split('-')
-
-			if(fullName.test(searchresLo)){
-				console.log(searchres)
-			}
-
 
 			if(searchsplit[0]===ufirstname&&searchsplit[1]===ulastname){
 
@@ -188,13 +179,6 @@ app.post('/searchbar', function(req, res){
 						}
 					})
 				}
-
-				// if(fullName.test(ufirstname)){
-				// 	console.log(ufirstname)
-				// } 
-				// if(fullName.test(ulastname)){
-				// 	console.log(ulastname)
-				// }
 
 				if(fnameWithDashes.length>1||lnameWithDashes.length>1){
 					
@@ -229,8 +213,8 @@ app.post('/searchbar', function(req, res){
 			}
 		}
 
-		Object.keys(allmatches).length !== 0 ? res.redirect(`/userlist/user?${foundmatches}`) : res.redirect(`/adduser?message=${because}`)
-
+	Object.keys(allmatches).length !== 0 ? res.redirect(`/userlist/user?${foundmatches}`) : res.redirect(`/adduser?message=${because}`)
+	
 	})
 })
 
