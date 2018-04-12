@@ -23,11 +23,12 @@ app.post('/searchbar', function(req, res){
 		
 		const fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/ig;
 
-		const fullName2 =/^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
+		const fullName2 = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
 
 		var userNames = JSON.parse(data)
 
 		var searchres = req.body.searchreq
+		console.log(searchres)
 		var searchresLo = searchres.toLowerCase()
 		var searchsplit = searchres.toLowerCase().split(' '),
 			searchsplitDash = searchres.toLowerCase().split('-')
@@ -48,6 +49,17 @@ app.post('/searchbar', function(req, res){
 				fnameWithDashes = ufirstname.split('-')
 			var lnameWithSpaces = ulastname.split(' '),
 				lnameWithDashes = ulastname.split('-')
+
+			if(searchresLo==fullUserName){
+
+				console.log(fullUserName)
+
+				allmatches['firstname']=ufirstname
+				allmatches['lastname']=ulastname
+
+				foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
+
+			} else{
 
 			if(searchsplit[0]===ufirstname&&searchsplit[1]===ulastname){
 
@@ -109,6 +121,8 @@ app.post('/searchbar', function(req, res){
 					Object.getOwnPropertyNames(allmatches).length<2 ? foundmatches = `lastname=${searchsplit[0]}` : foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
 				}
 			}
+
+		}
 		}
 
 	Object.keys(allmatches).length !== 0 ? res.redirect(`/userlist/user?${foundmatches}`) : res.redirect(`/adduser?message=${because}`)
@@ -165,7 +179,7 @@ app.post('/suggestion', (req, res)=> {
 		}
 
 		if (foundUsers[0] !== null) {
-			res.send({foundUsers: foundUsers})
+			res.send({foundusers: foundUsers})
 		}
 	})
 })

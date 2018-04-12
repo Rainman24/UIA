@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 		$.post('/suggestion', {inputvalue: inputDisplay}, function(responseData) {
 			
-			var matchObj = responseData.foundUsers
+			var matchObj = responseData.foundusers
 
 			$('#suggestion').empty()		
 
