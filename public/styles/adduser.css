@@ -8,6 +8,10 @@ body {
 	height: 100%;
 }
 
+a {
+	color: white;
+}
+
 h2 {
 	text-align: center;
 	grid-row: 3/4;
@@ -64,6 +68,18 @@ input {
 	padding: 5px;
 }
 
+label {
+	font-family: Arial;
+	width: 100%;
+	background: rgba(255,255,255,0.5);
+	color: rgb(77,174,210);
+	text-align: center;
+	margin: auto;
+	padding: 5px;
+}
+
+
+
 #submit {
 	width: auto;
 	padding: 10px;
@@ -80,6 +96,10 @@ input.validation:focus {
 
 input.valid:focus {
 	box-shadow: 0 0 2vw rgba(0,200,40,0.7);
+}
+
+input.valid {
+	box-shadow: 0 0 2vw rgba(0,200,110,0.7);
 }
 
 ::placeholder {

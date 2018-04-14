@@ -23,8 +23,11 @@ html
 
 				form(id='adduser' method='POST' autocomplete='off' action='/adduser')
 
+					label(for='firstname' style={display:'none'}) Each name field can consist of at least a single letter or two space separated words containing - or '
 					input(class='validation' type='text' name='firstname' placeholder='Firstname')
 					input(class='validation' type='text' name='lastname' placeholder='Lastname')
+
+					label(for='email' style={display:'none'}) something@mail.com or some11_thing00@contact.co.uk
 					input(class='validation' type='email' name='email' placeholder='Email')
 					input#submit(type='submit' value='Submit')
 

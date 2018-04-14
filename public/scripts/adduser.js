@@ -1,28 +1,47 @@
 $(document).ready(function(){
 
-	var fullName = /^[a-z]{1,20}(-|')?[a-z]{0,20}?\s?[a-z]{0,20}?(-|')?[a-z]{0,20}?$/gi
-	// var userInfo
+	var fullName = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
+	var emailVal = /^\w{1,20}(\.\w{1,20})?@\w{1,20}(-\w{1,20})?(\.[a-z]{2,9}){1,2}$/gi;
 
-	$('.validation').each(function(index,element){
+	var addUserInputs = $('#adduser')
+
+	$(addUserInputs[0].children).each(function(index,element){
 
 		$(element).on('keyup',function(evnt){
 
-			console.log(evnt.target)
-			// console.log(evnt.target.value)
-
 			var userInfo = evnt.target.value
-			console.log(userInfo)
-			
 
-			if(fullName.test(userInfo)) {
-				$(element).addClass('valid')
-				console.log(userInfo.length)
-			} else if(!fullName.test(userInfo)){
-				$(element).removeClass('valid')
+			if(evnt.target.type=='text'){			
+
+				if(fullName.test(userInfo)) {
+					$(element).addClass('valid')
+				} else if(!fullName.test(userInfo)){
+					$(element).removeClass('valid')
+				}
+			}
+
+			if(evnt.target.type=='email'){
+
+				if(emailVal.test(userInfo)) {
+					$(element).addClass('valid')
+	
+				} else if(!emailVal.test(userInfo)){
+					$(element).removeClass('valid')
+				}
 			}
 			
 		})
 
+		$('#adduser').on('submit', function(evnt){
+
+			if(element.className=='validation'&&element.classList.length<2){
+				evnt.preventDefault()
+				$('label').css({display:'block'})
+			}
+		})
+
 	})
+
+
 
 })

@@ -30,20 +30,50 @@ script.
 
 	$(document).ready(function(){
 
+		//- var setOfMatches = $('.partialMatch')
+		//- console.log(setOfMatches)
+
+		var matches = document.querySelectorAll("ul.partialMatch");
+		console.log(matches)
+
+		if(matches.length!==0){
+		console.log('okay great')
+				$(matches).wrapAll("<div id='matches'>")
+
+				var foundMatches = $('#matches')
+
+				$('#usercollection').prepend(foundMatches)
+		}
+
 		$('ul.userlist').each(function(index,element){
+
+			//- if(element.dataset.mixmatch=='true'){
+			//- 	//- console.log(element)
+				
+			//- 	$('.partialMatch').wrapAll("<div id='matches'>")
+
+			//- 	var foundMatches = $('#matches')
+
+			//- 	$('#usercollection').prepend(foundMatches)
+			//- }
 			
 			if(element.dataset.fullmatch=='true'){
 				var ulloc = parseInt(element.offsetTop)-20
 				window.scrollTo(0,ulloc)
 			}
+
 			if(element.dataset.fnamematch=='true'){
+				
 				var ulloc = parseInt(element.offsetTop)-20
 				window.scrollTo(0,ulloc)
 			}
 			if(element.dataset.lnamematch=='true'){
+				
 				var ulloc = parseInt(element.offsetTop)-20
 				window.scrollTo(0,ulloc)
 			}
+
+
 			
 		})
 
