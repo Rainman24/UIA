@@ -24,7 +24,7 @@ body {
 	scroll-behavior: smooth;
 	grid-row-gap: 4vh;
 	justify-items: center;
-	padding-top: 10vh;
+	padding-top: 7vh;
 	padding-bottom: 5vh;
 }
 
@@ -89,7 +89,7 @@ ul.userlist:hover li.users {
 }
 
 #matches {
-	border-bottom: 2px dashed black;
+	border-bottom: 2px dashed rgba(70,70,70,1);
 	grid-column: 1/4;
 	display: grid;
 	grid-auto-rows: minmax(7vh,12vh);
@@ -97,13 +97,15 @@ ul.userlist:hover li.users {
 	width: 100%;
 	height: 100%;
 	padding-top: 5vh;
+	/*padding-bottom: 5vh;*/
 	align-items: space-evenly;
 	z-index: 1;
 }
 
 
 ul.partialMatch li:nth-child(1){
-	/*background: GoldenRod;*/
+	/*border-top: 2px solid black;*/
+	background: rgba(250,250,250,1);
 }
 
 ul.partialMatch{
