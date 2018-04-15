@@ -17,21 +17,20 @@ html
 
 		h2(id='querystring' data-fname=founduser.firstname data-lname=founduser.lastname style={display:'none'})
 
-	div#usercollection.ucoll
+	div#main
 
-		each item in userNames
+		div#usercollection.ucoll
 
-			ul(class='userlist' data-firstname=item.firstname data-lastname=item.lastname)
+			each item in userNames
 
-				li.users #{item.firstname} #{item.lastname}
-				li.users #{item.email}
+				ul(class='userlist' data-firstname=item.firstname data-lastname=item.lastname)
+
+					li.users #{item.firstname} #{item.lastname}
+					li.users #{item.email}
 
 script.
 
 	$(document).ready(function(){
-
-		//- var setOfMatches = $('.partialMatch')
-		//- console.log(setOfMatches)
 
 		var matches = document.querySelectorAll("ul.partialMatch");
 		console.log(matches)
@@ -42,20 +41,10 @@ script.
 
 				var foundMatches = $('#matches')
 
-				$('#usercollection').prepend(foundMatches)
+				$('#main').prepend(foundMatches)
 		}
 
 		$('ul.userlist').each(function(index,element){
-
-			//- if(element.dataset.mixmatch=='true'){
-			//- 	//- console.log(element)
-				
-			//- 	$('.partialMatch').wrapAll("<div id='matches'>")
-
-			//- 	var foundMatches = $('#matches')
-
-			//- 	$('#usercollection').prepend(foundMatches)
-			//- }
 			
 			if(element.dataset.fullmatch=='true'){
 				var ulloc = parseInt(element.offsetTop)-20
@@ -72,8 +61,6 @@ script.
 				var ulloc = parseInt(element.offsetTop)-20
 				window.scrollTo(0,ulloc)
 			}
-
-
 			
 		})
 
@@ -82,13 +69,13 @@ script.
 style.
 
 	ul.nav {
-		background: white;
+		background: whitesmoke;
 	}
 
-	.nav li:hover {
-		background: radial-gradient(rgba(190,190,190,0.4),rgba(110,110,110,0.6));
-	}
+	//- .nav li:hover {
+	//- 	background: radial-gradient(rgba(190,190,190,0.4),rgba(110,110,110,0.6));
+	//- }
 
-	.nav li:hover a {
-		color: white;
-	}
+	//- .nav li:hover a {
+	//- 	color: white;
+	//- }
