@@ -1,4 +1,3 @@
-/*@import url('https://fonts.googleapis.com/css?family=Old+Standard+TT');*/
 @import url('https://fonts.googleapis.com/css?family=Lora');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
@@ -13,9 +12,6 @@ body {
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 4fr 1fr;
-	/*background: url('/images/VBurlyuk_vertical.jpg');
-	background-size: cover;
-	background-position: 50% 0%;*/
 }
 
 .ucoll {
@@ -26,10 +22,9 @@ body {
 	border-left: 2px solid black;
 	border-right: 2px solid black;
 	scroll-behavior: smooth;
-	/*background: rgba(255,255,255,1);*/
 	grid-row-gap: 4vh;
 	justify-items: center;
-	padding-top: 5vh;
+	padding-top: 10vh;
 	padding-bottom: 5vh;
 }
 
@@ -40,16 +35,13 @@ ul.userlist {
 	height: 100%;
 	padding: 0;
 	background: white;
-	/*background: url('/images/VBurlyuk_blur.jpg');
-	background-size: cover;
-	background-position: 0% 50%;*/
 	transition: 0.8s ease;
 	justify-self: center;
 	-webkit-padding-start: 0;
 }
 
 ul.userlist[data-fullmatch=true],ul.userlist[data-lnamematch=true],ul.userlist[data-fnamematch=true]{
-	/*border-top: 4px solid black;*/
+	border-top: 4px solid black;
 }
 
 li.users {
@@ -85,23 +77,19 @@ ul.userlist li:nth-child(2) {
 	border-bottom: 2px solid black;
 	font-family: 'Open Sans', sans-serif;
 	text-align: right;
+	text-indent: 10%;
 }
 
 ul.userlist:hover li.users {
 	/*width: 140%;
 	z-index: 1;*/
-	/*background-color: rgba(190,190,190,0.8);*/
-	/*background: linear-gradient(to right,rgba(250,250,250,0.9),rgba(220,220,220,1));*/
+	background: white;
 	text-align: center;
-	/*background: white;*/
-	align-self: center;
-	margin: auto;
-	/*color: white;*/
+
 }
 
 #matches {
-	/*background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4));*/
-	border-bottom: 2px solid black;
+	border-bottom: 2px dashed black;
 	grid-column: 1/4;
 	display: grid;
 	grid-auto-rows: minmax(7vh,12vh);
@@ -109,7 +97,6 @@ ul.userlist:hover li.users {
 	width: 100%;
 	height: 100%;
 	padding-top: 5vh;
-	/*padding-bottom: 5vh;*/
 	align-items: space-evenly;
 	z-index: 1;
 }
@@ -124,14 +111,6 @@ ul.partialMatch{
 	height: 100%;
 }
 
-/*a {
-	color: rgba(1,1,99,1);
-}*/
-
 a {
-	color: white;
-}
-
-a:hover {
 	color: white;
 }
