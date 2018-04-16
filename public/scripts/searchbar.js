@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-	for(i=0;i<8;i++){
-		$('#main').append(`<div class='grid'></div>`)
-	}
+	// for(i=0;i<8;i++){
+	// 	$('#main').append(`<div class='grid'></div>`)
+	// }
 
 	$('#autocomplete').keyup(function(anevent) {
 
