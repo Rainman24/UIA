@@ -34,13 +34,14 @@ body {
 
 p {
 	display: block;
-	grid-row: 1/2;
+	grid-row: 3/4;
 	font-family: Arial;
 	font-size: 3vh;
 	text-transform: uppercase;
-	padding: 10;
+	/*padding: 10;*/
 	align-self: center;
-	justify-self: center;
+	padding-left: 20px;
+	/*justify-self: center;*/
 }
 
 form {
