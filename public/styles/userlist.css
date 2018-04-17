@@ -81,8 +81,6 @@ ul.userlist li:nth-child(2) {
 }
 
 ul.userlist:hover li.users {
-	/*width: 140%;
-	z-index: 1;*/
 	background: white;
 	text-align: center;
 
@@ -97,7 +95,6 @@ ul.userlist:hover li.users {
 	width: 100%;
 	height: 100%;
 	padding-top: 5vh;
-	/*padding-bottom: 5vh;*/
 	align-items: space-evenly;
 	z-index: 1;
 }
@@ -115,4 +112,8 @@ ul.partialMatch{
 
 a {
 	color: white;
+}
+
+a:hover {
+	color: brown;
 }
