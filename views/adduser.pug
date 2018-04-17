@@ -17,9 +17,10 @@ html
 
 		div#main
 
-			div#addform
+			p You can add
+			p a new user here
 
-				p You can add a new user here
+			div#addform
 
 				form(id='adduser' method='POST' autocomplete='off' action='/adduser')
 
@@ -35,14 +36,19 @@ html
 
 style.
 
+	ul.nav {
+		border-bottom: 2px solid rgba(40,40,40,0.6);
+	}
+
 	.nav li {
-		background: radial-gradient(rgba(195,195,194,1),rgba(160,160,150,0.8));
+		background: white;
+		transition: 0.8s ease;
 	}
 
 	.nav li:hover {
-		background: radial-gradient(rgba(250,250,250,0.9),rgba(230,230,230,0.8));
+		background: radial-gradient(rgba(227,223,220,1),rgba(250,250,250,1));
 	}
 
 	.nav li:hover a {
-		color: rgba(77,174,210,0.8);
+		color: goldenrod;
 	}
