@@ -15,8 +15,10 @@ a {
 
 h2 {
 	text-align: center;
-	grid-row: 3/4;
+	grid-row: 1/2;
 	align-self: center;
+	color: white;
+	text-shadow: 0px 0px 10px black;
 }
 
 #main {
@@ -29,9 +31,9 @@ h2 {
 
 #addform {
 	grid-column: 2/3;
-	grid-row: 1/4;
+	grid-row: 1/7;
 	height: 100%;
-	background:  url('/images/RNG.jpg');
+	background:  url('/images/RNG-blur.png');
 	background-size: cover;
 	border-left: 2px solid black;
 	border-right: 2px solid black;
@@ -53,11 +55,13 @@ p {
 p:nth-child(1) {
 	grid-column: 1/2;
 	text-align: right;
+	background: linear-gradient(to right,rgba(227,223,220,1),rgba(255,255,255,1));
 }
 
 p:nth-child(2) {
 	grid-column: 3/4;
 	text-align: left;
+	background: linear-gradient(to left,rgba(227,223,220,1),rgba(255,255,255,1));
 }
 
 #adduser {
@@ -66,8 +70,8 @@ p:nth-child(2) {
 	padding: 20px 0 10px 0;
 	margin: 0;
 	width: 100%;
-	height: auto;
-	background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0),rgba(0,0,0,0.1));
+	height: 100%;
+	background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.1),rgba(40,40,40,0.2));
 }
 
 input {

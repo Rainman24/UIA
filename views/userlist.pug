@@ -42,27 +42,56 @@ script.
 				var foundMatches = $('#matches')
 
 				$('#main').prepend(foundMatches)
+
 		}
 
-		$('ul.userlist').each(function(index,element){
-			
-			if(element.dataset.fullmatch=='true'){
-				var ulloc = parseInt(element.offsetTop)-20
-				window.scrollTo(0,ulloc)
-			}
+		var usersUl = document.querySelectorAll('ul.userlist')
 
-			if(element.dataset.fnamematch=='true'){
-				
-				var ulloc = parseInt(element.offsetTop)-20
-				window.scrollTo(0,ulloc)
+
+
+		//- console.log(Array.from(usersUl).filter(element => element.dataset.fullmatch).map(element => element.offsetTop))
+		//- console.log(Array.from(usersUl).filter(element => element.dataset.fnamematch).map(element => element.offsetTop))
+		//- console.log(Array.from(usersUl).filter(element => element.dataset.lnamematch).map(element => element.offsetTop))
+
+		//- var fullmatch = Array.from(usersUl).filter(element => element.dataset.fullmatch).map(element => element.offsetTop)
+		//- console.log(fullmatch)
+
+		function queryMatches(htmlc, y){
+			var scrollto = Array.from(htmlc).filter(element => element.dataset[y]).map(element => element.offsetTop)
+			if(scrollto.length>=1){
+			return parseInt(scrollto[0]-20)
 			}
-			if(element.dataset.lnamematch=='true'){
-				
-				var ulloc = parseInt(element.offsetTop)-20
-				window.scrollTo(0,ulloc)
-			}
+		}
+
+		if(queryMatches(usersUl, 'fullmatch')!==undefined){
+
+			window.scrollTo(0,queryMatches(usersUl, 'fullmatch'))
+
+		} else if(queryMatches(usersUl, 'lnamematch')!==undefined){
+
+			window.scrollTo(0,queryMatches(usersUl, 'lnamematch'))
+
+		}
+
+		//- $('ul.userlist').each(function(index,element){
 			
-		})
+		//- 		if(element.dataset.fnamematch=='true'){
+					
+		//- 			var ulloc = parseInt(element.offsetTop)-20
+		//- 			window.scrollTo(0,ulloc)
+
+		//- 		} else if(element.dataset.lnamematch=='true'){
+					
+		//- 			var ulloc = parseInt(element.offsetTop)-20
+		//- 			window.scrollTo(0,ulloc)
+
+		//- 		} else if(element.dataset.fullmatch=='true'){
+		//- 			var ulloc = parseInt(element.offsetTop)-20
+		//- 			window.scrollTo(0,ulloc)
+		//- 		}
+				
+		//- 	})
+		
 
 	})
 
@@ -71,12 +100,13 @@ style.
 	ul.nav {
 		background: rgba(235,235,235,1);
 		font-family: font-family: 'Open Sans', sans-serif;
+		transition: 0.8s ease;
 	}
 
-	//- .nav li:hover {
-	//- 	background: radial-gradient(rgba(190,190,190,0.4),rgba(110,110,110,0.6));
-	//- }
+	.nav li:hover {
+		background: linear-gradient(rgba(255,255,255,1),rgba(235,235,235,1));
+	}
 
-	//- .nav li:hover a {
-	//- 	color: white;
-	//- }
+	.nav li:hover a {
+		color: brown;
+	}

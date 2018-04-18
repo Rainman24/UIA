@@ -36,15 +36,17 @@ $(document).ready(function(){
 
 					element.setAttribute('data-fullmatch', true)
 					
-				} else if(uri[0].dataset.fname==firstn.toLowerCase()){
+				} else if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname!==lastn.toLowerCase){
 					
 					 element.setAttribute('data-fnamematch', true)
 					 element.setAttribute('data-mixmatch', false)
+					 // element.setAttribute('data-fullmatch', false)
 
-				} else if(uri[0].dataset.lname==lastn.toLowerCase()){
+				} else if(uri[0].dataset.lname==lastn.toLowerCase()&&uri[0].dataset.fname!==firstn.toLowerCase()){
 
 					element.setAttribute('data-lnamematch', true)
 					element.setAttribute('data-mixmatch', false)
+					// element.setAttribute('data-fullmatch', false)
 
 				}
 			}
