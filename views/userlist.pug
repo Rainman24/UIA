@@ -47,15 +47,6 @@ script.
 
 		var usersUl = document.querySelectorAll('ul.userlist')
 
-
-
-		//- console.log(Array.from(usersUl).filter(element => element.dataset.fullmatch).map(element => element.offsetTop))
-		//- console.log(Array.from(usersUl).filter(element => element.dataset.fnamematch).map(element => element.offsetTop))
-		//- console.log(Array.from(usersUl).filter(element => element.dataset.lnamematch).map(element => element.offsetTop))
-
-		//- var fullmatch = Array.from(usersUl).filter(element => element.dataset.fullmatch).map(element => element.offsetTop)
-		//- console.log(fullmatch)
-
 		function queryMatches(htmlc, y){
 			var scrollto = Array.from(htmlc).filter(element => element.dataset[y]).map(element => element.offsetTop)
 			if(scrollto!==undefined){
@@ -63,36 +54,35 @@ script.
 			}
 		}
 
-		window.scrollTo(0,queryMatches(usersUl, 'fullmatch')) || window.scrollTo(0,queryMatches(usersUl, 'fnamematch')) || window.scrollTo(0,queryMatches(usersUl, 'lnamematch'))
+		function filterMatch(fullname,lastname,firstname){
 
-		//- if(queryMatches(usersUl, 'fullmatch')!==undefined){
+			//- var matchAt
 
-		//- 	window.scrollTo(0,queryMatches(usersUl, 'fullmatch'))
+			//- if(!isNaN(queryMatches(usersUl, fullname))) {
+			//- 	matchAt = queryMatches(usersUl, fullname)
+			//- }
+			//- else if(!isNaN(queryMatches(usersUl, lastname))) {
+			//- 	matchAt = queryMatches(usersUl, lastname)
+			//- }
+			//- else if(!isNaN(queryMatches(usersUl, firstname))) {
+			//- 	matchAt = queryMatches(usersUl, firstname)
+			//- }
 
-		//- } else if(queryMatches(usersUl, 'lnamematch')!==undefined){
+			//- return matchAt
 
-		//- 	window.scrollTo(0,queryMatches(usersUl, 'lnamematch'))
+			var matchAt = Array.of(queryMatches(usersUl, fullname),queryMatches(usersUl, lastname),queryMatches(usersUl, firstname))
+			console.log(matchAt)
+			var winScroll = matchAt.find((element) => !isNaN(element))
+			console.log(winScroll)
 
-		//- }
+			return winScroll
 
-		//- $('ul.userlist').each(function(index,element){
-			
-		//- 		if(element.dataset.fnamematch=='true'){
-					
-		//- 			var ulloc = parseInt(element.offsetTop)-20
-		//- 			window.scrollTo(0,ulloc)
 
-		//- 		} else if(element.dataset.lnamematch=='true'){
-					
-		//- 			var ulloc = parseInt(element.offsetTop)-20
-		//- 			window.scrollTo(0,ulloc)
+		}
 
-		//- 		} else if(element.dataset.fullmatch=='true'){
-		//- 			var ulloc = parseInt(element.offsetTop)-20
-		//- 			window.scrollTo(0,ulloc)
-		//- 		}
-				
-		//- 	})
+		//- filterMatch('fullmatch', 'lnamematch', 'fnamematch')
+
+		window.scrollTo(0,filterMatch('fullmatch', 'lnamematch', 'fnamematch'))
 		
 
 	})
