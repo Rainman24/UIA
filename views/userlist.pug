@@ -58,20 +58,22 @@ script.
 
 		function queryMatches(htmlc, y){
 			var scrollto = Array.from(htmlc).filter(element => element.dataset[y]).map(element => element.offsetTop)
-			if(scrollto.length>=1){
+			if(scrollto!==undefined){
 			return parseInt(scrollto[0]-20)
 			}
 		}
 
-		if(queryMatches(usersUl, 'fullmatch')!==undefined){
+		window.scrollTo(0,queryMatches(usersUl, 'fullmatch')) || window.scrollTo(0,queryMatches(usersUl, 'fnamematch')) || window.scrollTo(0,queryMatches(usersUl, 'lnamematch'))
 
-			window.scrollTo(0,queryMatches(usersUl, 'fullmatch'))
+		//- if(queryMatches(usersUl, 'fullmatch')!==undefined){
 
-		} else if(queryMatches(usersUl, 'lnamematch')!==undefined){
+		//- 	window.scrollTo(0,queryMatches(usersUl, 'fullmatch'))
 
-			window.scrollTo(0,queryMatches(usersUl, 'lnamematch'))
+		//- } else if(queryMatches(usersUl, 'lnamematch')!==undefined){
 
-		}
+		//- 	window.scrollTo(0,queryMatches(usersUl, 'lnamematch'))
+
+		//- }
 
 		//- $('ul.userlist').each(function(index,element){
 			
