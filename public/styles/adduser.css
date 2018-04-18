@@ -82,6 +82,7 @@ input {
 	border-radius: 17px 0px;
 	outline: none;
 	border: 1px solid black;
+	text-indent: 10%;
 }
 
 label {
@@ -106,18 +107,16 @@ label {
 
 input.validation:focus {
 	outline: none;
-	border: 1px solid brown;
-	box-shadow: 0 0 10px rgba(90,10,10,1);
+	border: 1px dashed black;
 }
 
 input.valid:focus {
 	box-shadow: none;
-	border: 2px solid rgba(0,200,110,0.7);
+	border: 1px solid lightskyblue;
 }
 
 input.valid {
-	border: 2px solid rgba(103,198,139,1);
-	box-shadow: 0 0 2vh rgba(255,255,255,0.4);
+	border: 1px solid lightskyblue;
 }
 
 ::placeholder {

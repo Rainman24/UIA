@@ -1,13 +1,16 @@
 $(document).ready(function(){
 
-	var fullName = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
-	var emailVal = /^\w{1,20}(\.\w{1,20})?@\w{1,20}(-\w{1,20})?(\.[a-z]{2,9}){1,2}$/gi;
+	// var fullName = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
+	// var emailVal = /^\w{1,20}(\.\w{1,20})?@\w{1,20}(-\w{1,20})?(\.[a-z]{2,9}){1,2}$/gi;
 
 	var addUserInputs = $('#adduser')
 
 	$(addUserInputs[0].children).each(function(index,element){
 
 		$(element).on('keyup',function(evnt){
+
+		var fullName = /^[a-z]{1,20}(-?[a-z]{0,20}|'?[a-z]{0,20})(\s[a-z]{1,20}|\s[0-9]{1,20})?(-?[a-z]{0,20}|'?[a-z]{0,20})$/gi;
+		var emailVal = /^\w{1,20}(\.\w{1,20})?@\w{1,20}(-\w{1,20})?(\.[a-z]{2,9}){1,2}$/gi;
 
 			var userInfo = evnt.target.value
 

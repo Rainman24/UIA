@@ -33,15 +33,12 @@ script.
 	$(document).ready(function(){
 
 		var matches = document.querySelectorAll("ul.partialMatch");
-		console.log(matches)
 
 		if(matches.length!==0){
-		console.log('okay great')
-				$(matches).wrapAll("<div id='matches'>")
-
-				var foundMatches = $('#matches')
-
-				$('#main').prepend(foundMatches)
+		
+			$(matches).wrapAll("<div id='matches'>")
+			var foundMatches = $('#matches')
+			$('#main').prepend(foundMatches)
 
 		}
 
@@ -70,8 +67,11 @@ script.
 style.
 
 	ul.nav {
-		background: rgba(235,235,235,1);
 		font-family: font-family: 'Open Sans', sans-serif;
+	}
+
+	.nav li {
+		background: rgba(235,235,235,1);
 		transition: 0.8s ease;
 	}
 
