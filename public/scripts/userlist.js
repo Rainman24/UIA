@@ -10,10 +10,13 @@ $(document).ready(function(){
 
 			var firstn = element.dataset.firstname
 			var lastn = element.dataset.lastname
+			var fullname = `${firstn} ${lastn}`
+			console.log(fullname)
 
 
+			if(uri[0].dataset.fname==uri[0].dataset.lname&&uri[0].dataset.fullname!==fullname.toLowerCase()){
 
-			if(uri[0].dataset.fname==uri[0].dataset.lname){
+				// uri[0].setAttribute('data-fullname', `${uri[0].dataset.fname} ${uri[0].dataset.lname}`)
 
 				if(uri[0].dataset.fname==firstn.toLowerCase()){
 				
@@ -30,13 +33,19 @@ $(document).ready(function(){
 				}
 			}
 
-			else if(uri[0].dataset.fname!==uri[0].dataset.lname){
+			else if(uri[0].dataset.fullname==fullname.toLowerCase()){
 
-				if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname==lastn.toLowerCase()){
+				element.setAttribute('data-fullmatch', true)
 
-					element.setAttribute('data-fullmatch', true)
+			} else if(uri[0].dataset.fullname!==fullname.toLowerCase()){
+
+				// if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname==lastn.toLowerCase()){
+
+				// 	element.setAttribute('data-fullmatch', true)
 					
-				} else if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname!==lastn.toLowerCase){
+				// } else 
+
+				if(uri[0].dataset.fname==firstn.toLowerCase()&&uri[0].dataset.lname!==lastn.toLowerCase){
 					
 					 element.setAttribute('data-fnamematch', true)
 					 element.setAttribute('data-mixmatch', false)
