@@ -56,34 +56,14 @@ script.
 
 		function filterMatch(fullname,lastname,firstname){
 
-			//- var matchAt
-
-			//- if(!isNaN(queryMatches(usersUl, fullname))) {
-			//- 	matchAt = queryMatches(usersUl, fullname)
-			//- }
-			//- else if(!isNaN(queryMatches(usersUl, lastname))) {
-			//- 	matchAt = queryMatches(usersUl, lastname)
-			//- }
-			//- else if(!isNaN(queryMatches(usersUl, firstname))) {
-			//- 	matchAt = queryMatches(usersUl, firstname)
-			//- }
-
-			//- return matchAt
-
 			var matchAt = Array.of(queryMatches(usersUl, fullname),queryMatches(usersUl, lastname),queryMatches(usersUl, firstname))
-			console.log(matchAt)
 			var winScroll = matchAt.find((element) => !isNaN(element))
-			console.log(winScroll)
 
 			return winScroll
 
-
 		}
 
-		//- filterMatch('fullmatch', 'lnamematch', 'fnamematch')
-
-		window.scrollTo(0,filterMatch('fullmatch', 'lnamematch', 'fnamematch'))
-		
+		window.scrollTo(0,filterMatch('fullmatch', 'lnamematch', 'fnamematch'))	
 
 	})
 
