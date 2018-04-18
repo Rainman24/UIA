@@ -18,7 +18,6 @@ app.get('/', (req, res)=>{
 app.post('/searchbar', function(req, res){
 
 	var searchres = req.body.searchreq
-
 	var searchresLo = searchres.toLowerCase()
 
 	var allmatches = new Object()
@@ -39,10 +38,8 @@ app.post('/searchbar', function(req, res){
 
 			if(searchresLo==fullUserName){
 
-				allmatches['firstname']=ufirstname
-				allmatches['lastname']=ulastname
-
-				foundmatches = `firstname=${allmatches.firstname}&lastname=${allmatches.lastname}`
+				allmatches['fullname']=fullUserName
+				foundmatches = `fullname=${allmatches.fullname}`
 
 			} else if(searchresLo!==fullUserName){
 
@@ -56,7 +53,7 @@ app.post('/searchbar', function(req, res){
 
 		}
 
-		if(Object.getOwnPropertyNames(allmatches).length==1){
+		if(Object.getOwnPropertyNames(allmatches).length==1&&!allmatches.hasOwnProperty('fullname')){
 				
 			allmatches.hasOwnProperty('firstname') ? foundmatches = `firstname=${allmatches.firstname}` : foundmatches = `lastname=${allmatches.lastname}`
 				

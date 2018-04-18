@@ -86,12 +86,13 @@ input {
 
 label {
 	font-family: Arial;
-	width: 100%;
-	background: rgba(255,255,255,0.5);
-	color: rgb(77,174,210);
-	text-align: center;
+	width: 60%;
+	background: linear-gradient(rgba(244,255,255,0.7),rgba(255,255,255,0.9),rgba(255,255,255,0.4));
+	color: goldenrod;
+	text-shadow: 0px 0px 1px white;
 	margin: auto;
-	padding: 5px;
+	padding: 10px;
+	border-left: 3px solid white;
 }
 
 #submit {
@@ -105,17 +106,18 @@ label {
 
 input.validation:focus {
 	outline: none;
-	border: 1px solid grey;
-	box-shadow: 0 0 20px rgba(210,110,110,1);
+	border: 1px solid brown;
+	box-shadow: 0 0 10px rgba(90,10,10,1);
 }
 
 input.valid:focus {
-	box-shadow: 0 0 2vh rgba(3,98,39,1);
+	box-shadow: none;
+	border: 2px solid rgba(0,200,110,0.7);
 }
 
 input.valid {
-	/*box-shadow: 0 0 2vw rgba(0,200,110,0.7);*/
-	box-shadow: 0 0 2vh rgba(3,98,39,1);
+	border: 2px solid rgba(103,198,139,1);
+	box-shadow: 0 0 2vh rgba(255,255,255,0.4);
 }
 
 ::placeholder {
