@@ -1,10 +1,40 @@
 ul.nav
-	li#one
-		a(href='/searchbar') SEARCHBAR
-	li#two
-		a(href='/userlist') LIST
-	li#three
-		a(href='/adduser') ADD USER
+
+	if homepage
+
+		li#one
+			a(href='/searchbar') SEARCHBAR
+		li#two
+			a(href='/userlist') LIST
+		li#three
+			a(href='/adduser') ADD USER
+
+	else if adduser
+
+		li#one
+			a(href='/searchbar') SEARCHBAR
+		li#two
+			a(href='/userlist') LIST
+		li#three
+			a(href='/') HOMEPAGE
+
+	else if searchbar
+
+		li#one
+			a(href='/') Homepage
+		li#two
+			a(href='/userlist') LIST
+		li#three
+			a(href='/adduser') ADDUSER
+
+	else if userlist
+
+		li#one
+			a(href='/searchbar') SEARCHBAR
+		li#two
+			a(href='/') homepage
+		li#three
+			a(href='/adduser') ADD USER
 
 style.
 
@@ -19,6 +49,7 @@ style.
 
 	ul.nav {
 		width: 100vw;
+		z-index: 1;
 		border-bottom: 2px solid black;
 		display: inline-block;
 		list-style: none;
@@ -40,6 +71,7 @@ style.
 
 	a {
 		text-decoration: none;
+		text-transform: uppercase;
 	}
 
 	#two, #three {

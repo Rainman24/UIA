@@ -33,7 +33,7 @@ h2 {
 	grid-column: 2/3;
 	grid-row: 1/7;
 	height: 100%;
-	background:  url('/images/RNG-blur.png');
+	background:  url('/images/RNG-fieldblur.png');
 	background-size: cover;
 	border-left: 2px solid black;
 	border-right: 2px solid black;
@@ -97,6 +97,7 @@ label {
 }
 
 #submit {
+	text-indent: 0;
 	width: auto;
 	padding: 10px;
 	margin-bottom: 10px;
@@ -107,7 +108,7 @@ label {
 
 input.validation:focus {
 	outline: none;
-	border: 1px dashed black;
+	border: 1px dashed brown;
 }
 
 input.valid:focus {

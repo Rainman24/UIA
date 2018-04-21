@@ -4,10 +4,21 @@ body {
 }
 
 p {
-	font-size: 27vw;
+	font-size: 20vw;
 	text-align: center;
 	padding: 0;
 	margin: 0;
+	color: rgba(40,40,40,1);
+	cursor: default;
+}
+
+.yes {
+	position: absolute;
+	top: 30%;
+	left: 26%;
+	text-align: center;
+	font-size: 60vh;
+	color: rgba(10,10,10,1);
 }
 
 a {

@@ -1,5 +1,9 @@
 html
 	head
+		script(src="https://code.jquery.com/jquery-3.2.1.js"
+			  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+			  crossorigin="anonymous")
+
 		link(rel='shortcut icon', type='image/png', href='/images/favicon.png')
 		link(rel='stylesheet', href='/styles/index.css')
 
@@ -9,4 +13,49 @@ html
 
 	include navbar.pug
 
-	p Is this working Yes
+	p(style={display:'none'}) Is this working?
+
+style.
+
+	ul.nav {
+		border-bottom: 2px solid rgba(40,40,40,1);
+	}
+
+	.nav li {
+		background: white;
+		transition: 0.8s ease;
+	}
+
+	.nav li:hover {
+		background: radial-gradient(rgba(227,223,220,1),rgba(250,250,250,1));
+	}
+
+	.nav li:hover a {
+		color: goldenrod;
+	}
+
+script.
+
+	$(document).ready(function(){
+
+		$('p').fadeIn(900)
+		$('p').css({display:'block'})
+
+		var introP = $('p')
+
+		if(introP[0].style.display == 'block'){
+			$(introP[0]).fadeOut(900)
+		}
+
+		setTimeout(function(){
+
+			introP[0].textContent = 'Yes'
+			$(introP[0]).addClass('yes')
+
+			$(introP[0]).fadeIn(900)
+
+		},1790);
+
+
+
+	})

@@ -11,7 +11,9 @@ app.set('views', './views')
 app.use(express.static('public'))
 
 app.get('/', (req, res)=>{
-	res.render('index')
+	res.render('index', {
+		homepage: true
+	})
 })
 
 
@@ -77,7 +79,7 @@ app.post('/adduser', function(req, res) {
 
 
 
-	var newuserquery = `firstname=${newUser.firstname.toLowerCase()}&lastname=${newUser.lastname.toLowerCase()}`
+	var newuserquery = `fullname=${newUser.firstname.toLowerCase()} ${newUser.lastname.toLowerCase()}`
 	console.log(newuserquery)
 
 	fs.readFile('./public/json/' + 'users.json', 'utf8', function(err,data) {
@@ -129,7 +131,8 @@ app.get('/userlist', (req, res)=>{
 	var userNames = JSON.parse(data)
 
 	res.render('userlist', {
-		userNames: userNames
+		userNames: userNames,
+		userlist: true
 		})
 	})
 })
@@ -145,18 +148,22 @@ app.get('/userlist/:user', (req, res)=>{
 
 	res.render('userlist', {
 		userNames: userNames,
-		founduser: req.query
+		founduser: req.query,
+		userlist: true
 		})
 	})
 })
 
 app.get('/searchbar', (req, res)=>{
-	res.render('searchbar')
+	res.render('searchbar',{
+		searchbar: true
+	})
 })
 
 app.get('/adduser', (req, res)=>{
 	res.render('adduser', {
-		message: req.query.message
+		message: req.query.message,
+		adduser: true
 	})
 })
 
